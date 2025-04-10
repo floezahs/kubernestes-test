@@ -1,9 +1,13 @@
-var http = require('http');
+import http from 'http';
 
-var handleRequest = function(request, response) {
-  console.log('Received request for URL: ' + request.url);
-  response.writeHead(200);
-  response.end('Hello World!');
-};
-var www = http.createServer(handleRequest);
-www.listen(8080);
+const PORT = process.env.PORT || 8080;
+
+const server = http.createServer((req, res) => {
+  console.log(`Received request for URL: ${req.url}`);
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World from Node.js 20!');
+});
+
+server.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
