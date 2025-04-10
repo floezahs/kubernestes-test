@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/floezahs/kubernestes-test.git'
     targetRevision: HEAD
-    path: app
+    path: manifests       # 👈 apuntar solo al directorio con YAMLs
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
